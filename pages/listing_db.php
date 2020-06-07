@@ -31,6 +31,13 @@ if(isset($_POST['db_selected'])) {
         <label class="container">
             
                     <div class="row">
+                        <div class="col-lg-12">
+                            <?php 
+                                if(isset($_SESSION['message'])) {
+                                    echo $_SESSION['message'];
+                                }
+                             ?>
+                        </div>
                         <div class="col-lg-6">
                             <label>BD de depart</label>
                             <select name="database1" class="form-control" required>
@@ -39,17 +46,17 @@ if(isset($_POST['db_selected'])) {
                                 <?php endwhile; ?>
                             </select>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-6"> 
                             <label> BD destination</label>
                             <select name="database2" class="form-control" required>
                                 <?php while($db_name2 = $all_database2->fetchColumn()): ?>
                                     <option value="<?= $db_name2 ?>"><?= $db_name2 ?></option>
                                 <?php endwhile; ?>
                             </select>
-                            <a href="#"><small>+ Ajouter une BD</small></a><br>  
+                            <a href="?page=add_database"><small>+ Ajouter une BD</small></a><br>  
                         </div> 
                     </div>  
-         </label>
+            </label>
 
             <div class="f1-buttons">
             <button type="button" class="btn btn-previous">Previous</button>
@@ -63,10 +70,7 @@ if(isset($_POST['db_selected'])) {
                         {
                              echo '<font color="red">'.$erreur."</font>";
                         }
-                        ?>
-
-
-
+                        ?> 
     		</form>
         </div>
 </div>

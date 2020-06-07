@@ -55,8 +55,7 @@
                  <?php 
 
                  if(isset($_SESSION['id'])) {
-
-
+ 
                  	if(isset($_GET['page'])) {
                  		$page = $_GET['page'];
                  		switch ($page) {
@@ -75,6 +74,10 @@
                  			case 'listing_table':
                  				require 'pages/listing_table.php';
                  				break;
+
+                            case 'add_database':
+                                require 'pages/add_database.php';
+                                break;
                  			
                  			default:
                  				require 'pages/db_type.php';
@@ -88,9 +91,7 @@
                  	require 'pages/login.php';
                  }
 
-                 ?>
-
-
+                 ?> 
             </div>  
         </div>
  
@@ -102,7 +103,28 @@
         <script src="assets/js/scripts.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
 
-        
+        <script>
+            function getcheckboxes() {
+                var node_list = document.getElementsByTagName('input');
+                var checkboxes = [];
+                for (var i = 0; i < node_list.length; i++) 
+                {
+                    var node = node_list[i];
+                    if (node.getAttribute('type') == 'checkbox') 
+                {
+                        checkboxes.push(node);
+                    }
+                } 
+                return checkboxes;
+            }
+            function toggle(source) {
+              checkboxes = getcheckboxes();
+              for(var i=0, n=checkboxes.length;i<n;i++) 
+              {
+                checkboxes[i].checked = source.checked;
+              }
+            }
+        </script>
     </body>
 
 </html>
