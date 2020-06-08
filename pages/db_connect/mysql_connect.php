@@ -16,7 +16,7 @@ if(isset($_POST['formport']))
     $server_connect = new PDO( "mysql:host=".$_SESSION['server'], $_SESSION['username'], $_SESSION['password']);
 
     if($server_connect != NULL) {
-        header('location: ?page=listing_db');
+        header('location: ?page=listing_db&step=4');
     } else {
         $_SESSION['error'] = "Une erreur s'est établie lors de la connexion au serveur !";
     }
@@ -57,8 +57,8 @@ if(isset($_POST['formport']))
                 </fieldset>
 
                     <div class="f1-buttons">
-                       <a href="dbtype.php"> <button type="button" class="btn btn-previous">Previous</button>
-                        <a href="base.php"> <button type="submit" name="formport" class="btn btn-next">Next</button>
+                       <a href="?page=db_type&step=2"> <button type="button" class="btn btn-previous">Previous</button>
+                        <a href="#"> <button type="submit" name="formport" class="btn btn-next">Next</button>
                     </div>
 
                      <?php

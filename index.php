@@ -32,20 +32,19 @@
             <div class="container">
                 
                 <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2 text">
+                    <div class="col-sm-7 col-sm-offset-3 text">
                         <h1><strong>DOT-IT MIGRATION </strong></h1>
                         <div class="description">
                        	    <p>
                                 This is a free platform for Database Migration 
                                 <ul class="progressbar">
-                                     <li><a href="login.php">Step 1</a></li>
-                                    <li class="active">Step 2</li>
-                                    <li>Step 3</li>
-                                    <li>Step 4</li>
-                                    <li>Step 5</li>
-                                    <li>Step 6</li>
-                                    <li>Step 7</li>
-                                    <li>Step 8</li> 
+                                    <li class="<?php if(isset($_GET['step'])) {  if($_GET['step'] == '1') { echo 'active'; } } else { echo 'active'; }  ?> ">Step 1</li>
+                                    <li class="<?php if(isset($_GET['step'])) {  if($_GET['step'] == '2') { echo 'active'; } }  ?> ">Step 2</li>
+                                    <li class="<?php if(isset($_GET['step'])) {  if($_GET['step'] == '3') { echo 'active'; } }  ?> ">Step 3</li>
+                                    <li class="<?php if(isset($_GET['step'])) {  if($_GET['step'] == '4') { echo 'active'; } }  ?> ">Step 4</li>
+                                    <li class="<?php if(isset($_GET['step'])) {  if($_GET['step'] == '5') { echo 'active'; } }  ?> ">Step 5</li>
+                                    <li class="<?php if(isset($_GET['step'])) {  if($_GET['step'] == '6') { echo 'active'; } }  ?> ">Step 6</li> 
+                                    <li class="<?php if(isset($_GET['step'])) {  if($_GET['step'] == '7') { echo 'active'; } }  ?> ">Step 7</li> 
                                 </ul>
                             </p>
                         </div>

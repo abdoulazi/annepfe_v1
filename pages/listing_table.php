@@ -14,7 +14,7 @@ if(isset($_POST['db_selected'])) {
     $_SESSION['database1'] = $_POST['database1'];
     $_SESSION['database2'] = $_POST['database2'];
 
-    header('location: ?view=listing_table');
+    header('location: ?view=listing_table&step=5');
 }
 ?>
 
@@ -125,7 +125,7 @@ if(isset($_POST['db_selected'])) {
                     } 
 
                 ?>
-        <form role="form" action="?page=listing_table" method="post" class="f1">
+        <form role="form" action="?page=listing_table&step=5" method="post" class="f1">
 
     <h1>Select Tables </h1>
     <!--<label class="container">
@@ -178,8 +178,9 @@ if(isset($_POST['db_selected'])) {
          </label>
 
             <div class="f1-buttons">
-            <button type="button" class="btn btn-previous">Previous</button>
-           
+            <a href="?page=listing_db&step=4">
+                <button type="button" class="btn btn-previous">Previous</button>
+           </a>
  
             <button type="submit" name="migrate" class="btn btn-next">Migrer</button>
                    

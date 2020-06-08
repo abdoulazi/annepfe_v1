@@ -14,7 +14,7 @@ if(isset($_POST['db_selected'])) {
     $_SESSION['database1'] = $_POST['database1'];
     $_SESSION['database2'] = $_POST['database2'];
 
-    header('location: ?page=listing_table');
+    header('location: ?page=listing_table&step=5');
 }
 ?>
  
@@ -59,7 +59,9 @@ if(isset($_POST['db_selected'])) {
             </label>
 
             <div class="f1-buttons">
-            <button type="button" class="btn btn-previous">Previous</button>
+                <a href="?page=db_connect&schema=mysql&step=3">
+                     <button type="button" class="btn btn-previous">Previous</button>
+                </a>
             <button type="submit" name="db_selected" name="formbase" class="btn btn-next">Next</button>
     		</div>
         </div>

@@ -19,7 +19,7 @@ if(isset($_POST['formconnexion']))
             $_SESSION['prenom']= $userinfo['prenom'];
             $_SESSION['login'] = $userinfo['login'];
             
-            header("Location: ?page=db_type");
+            header("Location: ?page=db_type&step=2");
         }
         else
         {
